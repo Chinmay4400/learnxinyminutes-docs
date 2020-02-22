@@ -46,6 +46,8 @@ var mySecondVar = myVar;
 // We can (and should) explicitly type things.
 var myThirdVar: real;
 var myFourthVar: real = -1.234;
+var myFifthVar : complex;
+//The default value of a variable initialized this way is of type 0, i.e. myThirdVar is 0, myFifthVar is 0.0+0.0i and so on.
 myThirdVar = myFourthVar;
 
 // Types
@@ -60,6 +62,7 @@ myCplx = myInt + myImag; // Another way to form complex numbers
 var myBool: bool = false; // Booleans
 var myStr: string = "Some string..."; // Strings
 var singleQuoteStr = 'Another string...'; // String literal with single quotes
+//Tip : You can print the type of a variable "a" using writeln(a.type : string);
 
 // Some types can have sizes.
 var my8Int: int(8) = 10; // 8 bit (one byte) sized int;
@@ -89,10 +92,11 @@ param compileTimeConst: int = 16;
 config var varCmdLineArg: int = -123;
 config const constCmdLineArg: int = 777;
 
-// config param can be set at compile-time.
+// config param and type aliases can be set at compile-time.
 // Set with --set paramCmdLineArg=value at compile-time.
 config param paramCmdLineArg: bool = false;
-writeln(varCmdLineArg, ", ", constCmdLineArg, ", ", paramCmdLineArg);
+config type myType = string;
+writeln(varCmdLineArg, ", ", constCmdLineArg, ", ", paramCmdLineArg,", "myType:string);
 
 // References
 
